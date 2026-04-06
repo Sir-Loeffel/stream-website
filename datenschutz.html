@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Datenschutzerklärung</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e0e10;
+      --surface: #18181b;
+      --border: #2a2a2f;
+      --accent: #9147ff;
+      --accent2: #ff4500;
+      --text: #efeff1;
+      --muted: #848494;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 60px 20px 80px;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 720px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 28px;
+      text-decoration: none;
+    }
+    .badge-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.2rem, 6vw, 3.4rem);
+      line-height: 1.1;
+      margin-bottom: 6px;
+      background: linear-gradient(120deg, #efeff1 30%, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 48px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 40px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+      animation: fadeUp 0.6s ease both;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+    }
+    .card:nth-child(2) { animation-delay: 0.05s; }
+    .card:nth-child(3) { animation-delay: 0.10s; }
+    .card:nth-child(4) { animation-delay: 0.15s; }
+    .card:nth-child(5) { animation-delay: 0.20s; }
+    .card:nth-child(6) { animation-delay: 0.25s; }
+    .card:nth-child(7) { animation-delay: 0.30s; }
+    .card:nth-child(8) { animation-delay: 0.35s; }
+    .card:nth-child(9) { animation-delay: 0.40s; }
+
+    .card-title {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .card-number {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0.5;
+      margin-bottom: 6px;
+    }
+
+    .prose {
+      font-size: 0.88rem;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .prose + .prose {
+      margin-top: 16px;
+    }
+
+    .prose strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .prose a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.2s, color 0.2s;
+      word-break: break-all;
+    }
+    .prose a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .rights-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .rights-item {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    .rights-item::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    .legal-basis-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .legal-basis-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 12px;
+      font-size: 0.88rem;
+      align-items: baseline;
+    }
+
+    .legal-basis-tag {
+      display: inline-block;
+      background: #9147ff18;
+      border: 1px solid #9147ff33;
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .section-block {
+      display: grid;
+      gap: 20px;
+    }
+
+    .section-block + .section-block {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .sub-heading {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1rem;
+      font-weight: normal;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.75rem;
+      margin-top: 40px;
+      opacity: 0.6;
+    }
+
+    @media (max-width: 520px) {
+      .card { padding: 24px 20px; }
+      .legal-basis-item { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <a href="https://sir-loeffel.github.io/stream-website/" class="badge">zurück</a>
+  <br><br>
+
+  <div class="badge"><span class="badge-dot"></span> Rechtliche Angaben</div>
+
+  <h1>Datenschutz&shy;erklärung</h1>
+  <p class="subtitle">Stand: April 2026</p>
+
+  <!-- 1. Verantwortlicher -->
+  <div class="card">
+    <div class="card-number">§ 1</div>
+    <div class="card-title">Verantwortlicher</div>
+    <p class="prose">
+      Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne der DSGVO ist:<br><br>
+      <strong>Kevin Clauß</strong><br>
+      c/o Impressumservice Dein-Impressum<br>
+      Stettiner Straße 41, 35410 Hungen<br>
+      E-Mail: <a href="mailto:l.o.f.stream@gmail.com">l.o.f.stream@gmail.com</a>
+    </p>
+  </div>
+
+  <!-- 2. Allgemeine Hinweise -->
+  <div class="card">
+    <div class="card-number">§ 2</div>
+    <div class="card-title">Allgemeine Hinweise</div>
+    <p class="prose">
+      Der Schutz deiner persönlichen Daten ist mir wichtig. Ich verarbeite personenbezogene Daten auf dieser Website nur, soweit dies zur Bereitstellung der Website, zur Bearbeitung von Anfragen oder zur Verlinkung meiner Social-Media- und Community-Kanäle erforderlich ist.
+    </p>
+    <p class="prose">
+      Die Nutzung dieser Website ist in der Regel ohne aktive Angabe personenbezogener Daten möglich. Personenbezogene Daten werden nur dann verarbeitet, wenn du mich kontaktierst oder externe Dienste über die auf der Website gesetzten Links aufrufst.
+    </p>
+  </div>
+
+  <!-- 3. Hosting -->
+  <div class="card">
+    <div class="card-number">§ 3</div>
+    <div class="card-title">Hosting der Website</div>
+    <p class="prose">
+      Diese Website wird über <strong>GitHub Pages</strong> bereitgestellt. Beim Aufruf der Website können durch den Hosting-Anbieter technisch erforderliche Zugriffsdaten verarbeitet werden – etwa IP-Adresse, Datum und Uhrzeit des Abrufs, Browserinformationen sowie die aufgerufene Seite.
+    </p>
+    <p class="prose">
+      Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Mein berechtigtes Interesse liegt in der sicheren, stabilen und technisch fehlerfreien Bereitstellung der Website.<br><br>
+      Weitere Informationen: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Datenschutzerklärung</a>
+    </p>
+  </div>
+
+  <!-- 4. Kontakt -->
+  <div class="card">
+    <div class="card-number">§ 4</div>
+    <div class="card-title">Kontaktaufnahme</div>
+    <p class="prose">
+      Eine Kontaktaufnahme ist über <strong>Instagram</strong>, <strong>Twitch</strong> oder ein Kontaktformular möglich. Wenn du mich kontaktierst, verarbeite ich die von dir übermittelten Daten ausschließlich zur Bearbeitung deiner Anfrage – insbesondere Name, E-Mail-Adresse und Nachrichteninhalt, sofern angegeben.
+    </p>
+    <p class="prose">
+      Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO bei vertragsbezogenen Anfragen sowie Art. 6 Abs. 1 lit. f DSGVO bei allgemeinen Nachrichten. Die Daten werden gelöscht, sobald deine Anfrage abschließend bearbeitet wurde und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
+    </p>
+  </div>
+
+  <!-- 5. Google Fonts -->
+  <div class="card">
+    <div class="card-number">§ 5</div>
+    <div class="card-title">Google Fonts</div>
+    <p class="prose">
+      Diese Website verwendet <strong>Google Fonts</strong> zur einheitlichen Darstellung von Schriftarten. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Beim Aufruf lädt dein Browser die Schriftarten ggf. direkt von Google-Servern – dabei kann insbesondere deine IP-Adresse übermittelt werden.
+    </p>
+    <p class="prose">
+      Soweit Schriftarten dynamisch von Google-Servern geladen werden, ist hierfür grundsätzlich eine Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO erforderlich. Als datenschutzfreundliche Alternative können Schriftarten lokal eingebunden werden.<br><br>
+      Weitere Informationen:
+      <a href="https://developers.google.com/fonts/faq/privacy" target="_blank" rel="noopener noreferrer">Google Fonts Datenschutz</a> &nbsp;·&nbsp;
+      <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer">Google Datenschutzerklärung</a>
+    </p>
+  </div>
+
+  <!-- 6–10. Externe Links -->
+  <div class="card">
+    <div class="card-number">§ 6 – 10</div>
+    <div class="card-title">Externe Links &amp; Plattformen</div>
+
+    <p class="prose" style="margin-bottom: 24px;">
+      Diese Website enthält externe Links zu sozialen Netzwerken und Community-Plattformen. Es handelt sich um reine Weiterleitungen – keine direkt eingebetteten Inhalte. Wenn du einen Link anklickst, verlässt du diese Website und rufst den jeweiligen Dienst direkt auf. Ab diesem Zeitpunkt gelten die Datenschutzbestimmungen des jeweiligen Anbieters.
+    </p>
+
+    <div class="section-block">
+      <div>
+        <div class="sub-heading">Twitch</div>
+        <p class="prose">Twitch Interactive, Inc., 350 Bush Street, 2nd Floor, San Francisco, CA 94104, USA.<br>
+        <a href="https://www.twitch.tv/p/de-de/legal/privacy-notice/" target="_blank" rel="noopener noreferrer">Datenschutzerklärung Twitch</a></p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div>
+        <div class="sub-heading">YouTube</div>
+        <p class="prose">Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.<br>
+        <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer">Datenschutzerklärung Google / YouTube</a></p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div>
+        <div class="sub-heading">Instagram</div>
+        <p class="prose">Meta Platforms Ireland Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland.<br>
+        <a href="https://privacycenter.instagram.com/policy/" target="_blank" rel="noopener noreferrer">Datenschutzerklärung Instagram</a></p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div>
+        <div class="sub-heading">Discord</div>
+        <p class="prose">Discord Inc., 444 De Haro Street, Suite 200, San Francisco, CA 94107, USA. Verlinkt sind die Server „BigBang (SC Orga)" und „DAP (Racing Team)".<br>
+        <a href="https://discord.com/privacy" target="_blank" rel="noopener noreferrer">Datenschutzerklärung Discord</a></p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div>
+        <div class="sub-heading">TikTok</div>
+        <p class="prose">TikTok Technology Limited, 10 Earlsfort Terrace, Dublin, D02 T380, Irland.<br>
+        <a href="https://www.tiktok.com/legal/page/eea/privacy-policy/de-DE" target="_blank" rel="noopener noreferrer">Datenschutzerklärung TikTok</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11. Cookies -->
+  <div class="card">
+    <div class="card-number">§ 11</div>
+    <div class="card-title">Cookies &amp; Tracking</div>
+    <p class="prose">
+      Nach dem derzeitigen Aufbau der Website werden durch mich <strong>keine eigenen Analyse- oder Trackingtools</strong> eingesetzt. Es sind nur externe Links zu Drittplattformen vorhanden, jedoch keine direkt eingebetteten Social-Media-Feeds oder Videoplayer.
+    </p>
+    <p class="prose">
+      Beim Besuch dieser Website selbst werden daher keine eigenen Marketing- oder Analyse-Cookies aktiv gesetzt. Wenn du externe Plattformen wie Twitch, YouTube, Instagram oder Discord aufrufst, können diese eigene Cookies und Tracking-Technologien verwenden – darauf habe ich keinen Einfluss. Du kannst Cookies jederzeit in den Einstellungen deines Browsers deaktivieren oder löschen.
+    </p>
+  </div>
+
+  <!-- 12. Rechtsgrundlagen -->
+  <div class="card">
+    <div class="card-number">§ 12</div>
+    <div class="card-title">Rechtsgrundlagen der Verarbeitung</div>
+    <div class="legal-basis-grid">
+      <div class="legal-basis-item">
+        <span class="legal-basis-tag">Art. 6 I a</span>
+        <span class="prose">Soweit du eine Einwilligung erteilst.</span>
+      </div>
+      <div class="legal-basis-item">
+        <span class="legal-basis-tag">Art. 6 I b</span>
+        <span class="prose">Soweit die Verarbeitung für die Bearbeitung deiner Anfrage erforderlich ist.</span>
+      </div>
+      <div class="legal-basis-item">
+        <span class="legal-basis-tag">Art. 6 I f</span>
+        <span class="prose">Soweit die Verarbeitung zur technisch sicheren Bereitstellung der Website oder zur Kommunikation erforderlich ist.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 13. Speicherdauer -->
+  <div class="card">
+    <div class="card-number">§ 13</div>
+    <div class="card-title">Speicherdauer</div>
+    <p class="prose">
+      Personenbezogene Daten werden nur so lange gespeichert, wie dies für den jeweiligen Zweck erforderlich ist. Daten aus Kontaktanfragen werden gelöscht, sobald die Anfrage vollständig bearbeitet wurde und keine gesetzlichen Aufbewahrungspflichten bestehen.
+    </p>
+  </div>
+
+  <!-- 14–15. Deine Rechte -->
+  <div class="card">
+    <div class="card-number">§ 14 – 15</div>
+    <div class="card-title">Deine Rechte</div>
+    <div class="rights-grid" style="margin-bottom: 20px;">
+      <div class="rights-item">Recht auf Auskunft (Art. 15 DSGVO)</div>
+      <div class="rights-item">Recht auf Berichtigung (Art. 16 DSGVO)</div>
+      <div class="rights-item">Recht auf Löschung (Art. 17 DSGVO)</div>
+      <div class="rights-item">Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</div>
+      <div class="rights-item">Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</div>
+      <div class="rights-item">Recht auf Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</div>
+      <div class="rights-item">Recht auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde</div>
+    </div>
+    <p class="prose">
+      Zur Ausübung deiner Rechte kannst du dich jederzeit an <a href="mailto:l.o.f.stream@gmail.com">l.o.f.stream@gmail.com</a> wenden.<br><br>
+      Du hast außerdem das Recht, dich bei der zuständigen Datenschutz-Aufsichtsbehörde deines Aufenthaltsortes, Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes zu beschweren.
+    </p>
+  </div>
+
+  <!-- 16. Änderungen -->
+  <div class="card">
+    <div class="card-number">§ 16</div>
+    <div class="card-title">Änderung dieser Erklärung</div>
+    <p class="prose">
+      Ich behalte mir vor, diese Datenschutzerklärung anzupassen, wenn sich die Website, die rechtlichen Anforderungen oder die Art der Datenverarbeitung ändern. Die jeweils aktuelle Version ist jederzeit auf dieser Seite abrufbar.
+    </p>
+  </div>
+
+  <div class="card" style="text-align: center; animation-delay: 0.45s;">
+    <div class="card-title">Weitere rechtliche Angaben</div>
+    <p class="prose">
+      Angaben zur verantwortlichen Person sowie Kontaktdaten findest du im
+      <a href="https://sir-loeffel.github.io/stream-website/Impressum.html">Impressum</a>.
+    </p>
+  </div>
+
+  <footer>© 2026 Kevin Clauß · L_o_F · Alle Rechte vorbehalten</footer>
+
+</div>
+</body>
+</html>
